@@ -7,6 +7,7 @@ import { StyleSheet, Text, SafeAreaView } from 'react-native';
 /**
  主容器
  */
+
 //const store = configureStore();
 export default function App() {
     return (

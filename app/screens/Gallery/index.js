@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Swiper from 'react-native-swiper'
 
-export default function Home() {
+export default function Gallery() {
     return (
         <View style={styles.out}>
             <Swiper style={styles.wrapper}>
