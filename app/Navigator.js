@@ -2,11 +2,13 @@ import React from 'react';
 import Home from './screens/Home'
 import Community from './screens/Community'
 import Gallery from './screens/Gallery'
-
+import Login from './screens/Login'
 import Profile from './screens/Profile'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import { useRoute } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 function RootTabs() {
@@ -42,11 +44,22 @@ function RootTabs() {
     )
 
 }
+const Stack = createStackNavigator()
+function RootStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Tab" component={RootTabs} options={{
+                headerShown: false
+            }} />
+            <Stack.Screen name='Login' component={Login}  />
+        </Stack.Navigator>
+    )
 
+}
 export default function Navigator() {
     return (
         <NavigationContainer>
-            <RootTabs />
+            <RootStack />
         </NavigationContainer>
     )
 }

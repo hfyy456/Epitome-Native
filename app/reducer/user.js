@@ -1,4 +1,4 @@
-import Type from '~/action/type';
+import Type from '~/action/actionTypes';
 //import { getToken } from '~/utils/token';
 //import { getInfo } from '~/api/user';
 
@@ -9,7 +9,7 @@ const initialStore = {
 
 /*getToken().then(async value => {
     initialStore.token = value;
-   // const res = await getInfo(value);
+    const res = await getInfo(value);
     initialStore.user = res.data;
 });*/
 

@@ -1,13 +1,7 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import {
     Text,
     View,
-    Image,
-    ListView,
-    TouchableNativeFeedback,
-    ActivityIndicator,
-    StyleSheet,
-    Dimensions,
 } from 'react-native';
 export default function Community() {
     return (
