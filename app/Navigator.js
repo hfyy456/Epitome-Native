@@ -4,6 +4,7 @@ import Community from './screens/Community'
 import Gallery from './screens/Gallery'
 import Login from './screens/Login'
 import Profile from './screens/Profile'
+import Welcome from './screens/Welcome'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
@@ -51,7 +52,10 @@ function RootStack() {
             <Stack.Screen name="Tab" component={RootTabs} options={{
                 headerShown: false
             }} />
-            <Stack.Screen name='Login' component={Login}  />
+            <Stack.Screen name='Login' component={Login} />
+            <Stack.Screen name='Welcome' component={Welcome} options={{
+                headerShown: false
+            }} />
         </Stack.Navigator>
     )
 

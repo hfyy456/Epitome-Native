@@ -1864,6 +1864,11 @@ bindings@^1.5.0:
   dependencies:
     file-uri-to-path "1.0.0"
 
+blueimp-md5@^2.17.0:
+  version "2.17.0"
+  resolved "https://registry.npm.taobao.org/blueimp-md5/download/blueimp-md5-2.17.0.tgz?cache=0&sync_timestamp=1595922224133&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fblueimp-md5%2Fdownload%2Fblueimp-md5-2.17.0.tgz#f4fcac088b115f7b4045f19f5da59e9d01b1bb96"
+  integrity sha1-9PysCIsRX3tARfGfXaWenQGxu5Y=
+
 bplist-creator@0.0.8:
   version "0.0.8"
   resolved "https://registry.npm.taobao.org/bplist-creator/download/bplist-creator-0.0.8.tgz#56b2a6e79e9aec3fc33bf831d09347d73794e79c"

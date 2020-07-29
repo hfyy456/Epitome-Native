@@ -21,7 +21,7 @@ export default function Home(props) {
         //login()
     })
     redirect = () => {
-        props.navigation.push('Login')
+        props.navigation.push('Welcome')
         console.log('login')
     }
     return (

@@ -5,9 +5,14 @@ class Xfetch {
     }
     async post(api, params) {
         let url = this.baseUrl + api
+        let data = JSON.stringify(params)
+        console.log(data)
         return fetch(url, {
-            body: JSON.stringify(params),
-            method: "POST"
+            body: data,
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
         }).then(respose => respose.json())
     }
     async get(api, params) {

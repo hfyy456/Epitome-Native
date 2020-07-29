@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import {
     Text,
     View,
-    Image,
-    ListView,
-    TouchableNativeFeedback,
-    ActivityIndicator,
     StyleSheet,
-    Dimensions,
 } from 'react-native';
+import { SearchBar } from 'react-native-elements'
 import Swiper from 'react-native-swiper'
 
 export default function Gallery() {
     return (
         <View style={styles.out}>
+            <SearchBar placeholder="Search..." lightTheme={true} round={true} />
             <Swiper style={styles.wrapper}>
                 <View style={styles.slide1}>
                     <Text style={styles.text}>Hello Swiper</Text>
