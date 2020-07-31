@@ -7,7 +7,9 @@ import {
 import { Button } from 'react-native-elements';
 import Swiper from 'react-native-swiper'
 import service from '~/utils/fetch'
-export default function Home(props) {
+import { useNavigation } from '@react-navigation/native';
+export default function Home() {
+    const navigation = useNavigation()
     function login() {
         let params = {
             username: 'admin',
@@ -21,7 +23,7 @@ export default function Home(props) {
         //login()
     })
     redirect = () => {
-        props.navigation.push('Welcome')
+        navigation.push('Welcome')
         console.log('login')
     }
     return (

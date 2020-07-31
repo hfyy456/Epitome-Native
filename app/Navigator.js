@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Home from './screens/Home'
 import Community from './screens/Community'
 import Gallery from './screens/Gallery'
@@ -7,13 +7,17 @@ import Profile from './screens/Profile'
 import Welcome from './screens/Welcome'
 import Regist from './screens/Regist'
 
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigationState } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 function RootTabs() {
+    const state = useNavigationState(state => state.index)
+    useEffect(() => {
+        console.log(state)
+    }, [state])
     return (
         <Tab.Navigator tabBarOptions={{
             activeTintColor: '#2986f7',
@@ -48,12 +52,11 @@ function RootTabs() {
 }
 const Stack = createStackNavigator()
 function RootStack() {
-
     return (
         <Stack.Navigator screenOptions={{
             headerTintColor: 'black',
-            headerTitleAlign:'center',
-            headerStyle: { backgroundColor: 'white',height:40 },
+            headerTitleAlign: 'center',
+            headerStyle: { backgroundColor: 'white', height: 40 },
         }}>
             <Stack.Screen name="Tab" component={RootTabs} options={{
                 headerShown: false

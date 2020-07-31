@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
-import { Input, Button } from 'react-native-elements';
+import { Input, Button, Text } from 'react-native-elements';
 import service from '~/utils/fetch'
 import Toast from 'react-native-root-toast';
-
+import { useNavigation } from '@react-navigation/native';
 import {
     View,
     StyleSheet,
@@ -12,7 +12,8 @@ import {
 } from 'react-native';
 import md5 from 'blueimp-md5'
 
-export default function Login(props) {
+export default function Login() {
+    const navigation = useNavigation();
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
@@ -45,7 +46,7 @@ export default function Login(props) {
                 if (res.code === 20000) {
                     console.log(res)
                     Toast.show(res.message, { position: Toast.positions.CENTER })
-                    props.navigation.push('Tab')
+                    navigation.push('Tab')
                 } else {
                     console.log(res)
                     Toast.show(res.message, { position: Toast.positions.CENTER })
@@ -67,7 +68,7 @@ export default function Login(props) {
         setPassword(text)
     }
     goRegist = () => {
-        props.navigation.push('Regist')
+        navigation.push('Regist')
     }
     return (
         <View style={styles.container}>
@@ -135,7 +136,7 @@ const styles = StyleSheet.create({
     textBtn: {
         marginHorizontal: 70,
         fontSize: 25,
-        marginTop: 20,
+        marginTop: 15,
         borderColor: "#437c7d"
 
     },

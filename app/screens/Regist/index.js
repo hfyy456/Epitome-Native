@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Input, Button } from 'react-native-elements';
 import service from '~/utils/fetch'
@@ -10,12 +10,13 @@ import {
     StatusBar
 } from 'react-native';
 import md5 from 'blueimp-md5'
+import { useNavigation } from '@react-navigation/native';
 
-export default function Login(props) {
+export default function Regist() {
+    const navigation = useNavigation()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
-
     const [loading, setLoading] = useState(false)
     handleRegist = () => {
         setLoading(true)
@@ -38,7 +39,7 @@ export default function Login(props) {
         })
     }
     goRegist = () => {
-        props.navigation.push('Regist')
+        navigation.push('Regist')
     }
     return (
         <View style={styles.container}>
